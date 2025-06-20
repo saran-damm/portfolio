@@ -11,9 +11,9 @@ export default {
         primary: '#0f172a',
         secondary: '#64748b',
         accent: {
-          DEFAULT: '#7c3aed', // Vibrant purple
-          light: '#9f67ff',
-          dark: '#6025c0',
+          DEFAULT: '#d97706', // Amber
+          light: '#f59e0b',
+          dark: '#b45309',
         },
         dark: {
           100: '#d5d5d5',

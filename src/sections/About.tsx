@@ -11,7 +11,7 @@ const About = () => {
   const skillCategories = [
     {
       category: 'Programming Languages',
-      description: 'Proficient in Python leveraging them to solve complex challenges across various domains.',
+      description: 'Proficient in Python, leveraging it to solve complex challenges across various domains.',
       icon: <FaPython />
     },
     {
@@ -50,7 +50,7 @@ const About = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -86,7 +86,7 @@ const About = () => {
           />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-20">
           <motion.div
             initial={{ x: -50, opacity: 0 }}
             animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
@@ -94,12 +94,11 @@ const About = () => {
           >
             <h3 className="text-2xl font-bold mb-4">Who am I?</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              I'm a Software Engineer specializing in Machine Learning at Splore. With a passion for AI and its applications, 
-              I develop solutions that leverage the power of LLMs and Computer Vision to solve complex problems.
+              With a passion for AI and its applications, I develop solutions that leverage the power of LLMs and Computer Vision to solve complex problems.
             </p>
             <p className="text-gray-600 dark:text-gray-400 mb-4">
-              My journey in tech began with a strong foundation in computer science, which evolved into a deep interest in 
-              artificial intelligence and its potential to transform industries.
+              My journey in tech began with a strong foundation in Computer Science, which evolved into a deep interest in 
+              Artificial Intelligence and its potential to transform industries.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
               I'm constantly exploring new technologies and methodologies to enhance my skills and deliver cutting-edge solutions.
@@ -107,7 +106,7 @@ const About = () => {
             
             <div className="mt-8">
               <h4 className="text-xl font-semibold mb-4">Personal Info</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                 <div>
                   <p className="text-gray-600 dark:text-gray-400"><span className="font-medium text-gray-900 dark:text-white">Name:</span> Sai Saran Dammavalam</p>
                 </div>
@@ -118,7 +117,7 @@ const About = () => {
                   <p className="text-gray-600 dark:text-gray-400"><span className="font-medium text-gray-900 dark:text-white">From:</span> India</p>
                 </div>
                 <div>
-                  <p className="text-gray-600 dark:text-gray-400"><span className="font-medium text-gray-900 dark:text-white">Role:</span> Software Engineer - ML</p>
+                  <p className="text-gray-600 dark:text-gray-400"><span className="font-medium text-gray-900 dark:text-white">Role:</span> Machine Learning Engineer</p>
                 </div>
               </div>
             </div>
@@ -134,7 +133,7 @@ const About = () => {
               {skillCategories.map((category, index) => (
                 <motion.div 
                   key={index}
-                  className="mb-6"
+                  className="mb-6 px-2 sm:px-0"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
@@ -146,11 +145,11 @@ const About = () => {
                   <p className="text-gray-600 dark:text-gray-400 mb-3">{category.description}</p>
                   
                   {category.subSkills && (
-                    <div className="ml-6 mt-3 space-y-3">
+                    <div className="ml-3 md:ml-6 mt-3 space-y-3">
                       {category.subSkills.map((subSkill, subIndex) => (
                         <motion.div 
                           key={subIndex}
-                          className="border-l-2 border-accent pl-4 py-1"
+                          className="border-l-2 border-accent pl-2 md:pl-4 py-1"
                           initial={{ opacity: 0, x: -10 }}
                           animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
                           transition={{ duration: 0.5, delay: 0.5 + index * 0.1 + subIndex * 0.05 }}

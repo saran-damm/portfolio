@@ -25,7 +25,7 @@ const Contact = () => {
   ];
 
   return (
-    <div ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div ref={sectionRef} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
       <motion.div
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
@@ -61,7 +61,7 @@ const Contact = () => {
           />
         </motion.div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8">
           {contactInfo.map((info, index) => (
             <motion.div
               key={index}
@@ -72,7 +72,7 @@ const Contact = () => {
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
               <motion.div 
-                className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center text-2xl mx-auto mb-4"
+                className="w-14 h-14 sm:w-16 sm:h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center text-xl sm:text-2xl mx-auto mb-3 sm:mb-4"
                 whileHover={{ scale: 1.1, backgroundColor: "rgba(124, 58, 237, 0.2)" }}
               >
                 {info.icon}
@@ -94,7 +94,7 @@ const Contact = () => {
         </div>
         
         <motion.div 
-          className="text-center mt-20 text-gray-600 dark:text-gray-400"
+          className="text-center mt-12 md:mt-20 text-gray-600 dark:text-gray-400"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 0.5, delay: 1.6 }}

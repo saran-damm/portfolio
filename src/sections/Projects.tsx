@@ -1,57 +1,59 @@
 import { useRef } from 'react';
 import { motion, useInView, easeOut } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaChartLine, FaLeaf, FaIndustry } from 'react-icons/fa';
 
-const Projects = () => {
+const IndustryExperience = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
 
-  const projects = [
+  const industries = [
     {
-      title: 'AI-Powered Image Recognition',
-      description: 'A deep learning model that can identify objects in images with high accuracy using state-of-the-art computer vision techniques.',
-      tags: ['Python', 'TensorFlow', 'Computer Vision', 'Deep Learning'],
-      image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YWklMjB2aXNpb258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60',
-      github: 'https://github.com/saran-damm',
-      demo: '#'
+      title: 'Financial Services',
+      period: '2022 - Present',
+      description: 'Developed AI solutions for risk assessment, fraud detection, and automated trading systems. Implemented predictive models for market analysis and customer segmentation.',
+      skills: ['Risk Analytics', 'Fraud Detection', 'Algorithmic Trading', 'Customer Insights'],
+      icon: <FaChartLine size={24} />,
+      color: 'bg-blue-500'
     },
     {
-      title: 'Natural Language Processing API',
-      description: 'An API that leverages large language models to analyze text, extract insights, and generate human-like responses.',
-      tags: ['Python', 'NLP', 'FastAPI', 'Transformers'],
-      image: 'https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bmF0dXJhbCUyMGxhbmd1YWdlJTIwcHJvY2Vzc2luZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60',
-      github: 'https://github.com/saran-damm',
-      demo: '#'
+      title: 'Sustainability',
+      period: '2020 - 2022',
+      description: 'Created machine learning models for environmental impact assessment, carbon footprint optimization, and sustainable resource allocation. Designed systems for monitoring and reducing energy consumption.',
+      skills: ['Carbon Footprint Analysis', 'Resource Optimization', 'Predictive Maintenance', 'Energy Efficiency'],
+      icon: <FaLeaf size={24} />,
+      color: 'bg-green-500'
     },
     {
-      title: 'Real-time Data Dashboard',
-      description: 'A responsive web dashboard that visualizes real-time data streams with interactive charts and analytics.',
-      tags: ['React', 'TypeScript', 'D3.js', 'WebSockets'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZGFzaGJvYXJkfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
-      github: 'https://github.com/saran-damm',
-      demo: '#'
-    },
-    {
-      title: 'Recommendation Engine',
-      description: 'A machine learning-based recommendation system that provides personalized suggestions based on user behavior.',
-      tags: ['Python', 'Machine Learning', 'Collaborative Filtering', 'Flask'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHJlY29tbWVuZGF0aW9ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60',
-      github: 'https://github.com/saran-damm',
-      demo: '#'
+      title: 'Manufacturing',
+      period: '2018 - 2020',
+      description: 'Implemented computer vision systems for quality control, predictive maintenance solutions, and supply chain optimization algorithms. Developed digital twins for production line simulation.',
+      skills: ['Quality Control', 'Predictive Maintenance', 'Supply Chain Optimization', 'Digital Twins'],
+      icon: <FaIndustry size={24} />,
+      color: 'bg-amber-500'
     }
   ];
 
-  const cardVariants = {
-    hidden: { y: 50, opacity: 0 },
+  const timelineVariants = {
+    hidden: { opacity: 0 },
     visible: (i: number) => ({
-      y: 0,
       opacity: 1,
       transition: {
-        delay: 0.1 * i,
-        duration: 0.6,
+        delay: 0.2 * i,
+        duration: 0.8,
         ease: easeOut
       }
     })
+  };
+  
+  const lineVariants = {
+    hidden: { height: 0 },
+    visible: { 
+      height: '100%',
+      transition: {
+        duration: 1.5,
+        ease: easeOut
+      }
+    }
   };
 
   return (
@@ -73,7 +75,7 @@ const Projects = () => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Portfolio
+            Experience
           </motion.h2>
           <motion.h3 
             className="text-4xl md:text-5xl font-bold mb-6"
@@ -81,7 +83,7 @@ const Projects = () => {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Recent Projects
+            Industry Expertise
           </motion.h3>
           <motion.div 
             className="w-20 h-1 bg-accent mx-auto mb-8"
@@ -89,89 +91,89 @@ const Projects = () => {
             animate={isInView ? { width: 80 } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           />
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            My professional journey spans across multiple industries where I've applied AI and data science to solve complex business challenges.
+          </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              variants={cardVariants}
-              initial="hidden"
-              animate={isInView ? "visible" : "hidden"}
-              className="group"
-            >
-              <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="relative overflow-hidden h-64">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                    <div className="p-6 w-full">
-                      <div className="flex justify-between items-center">
-                        <h4 className="text-xl font-bold text-white">{project.title}</h4>
-                        <div className="flex gap-3">
-                          <motion.a 
-                            href={project.github} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-white hover:text-accent"
-                            whileHover={{ scale: 1.2, rotate: 5 }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <FaGithub size={20} />
-                          </motion.a>
-                          <motion.a 
-                            href={project.demo} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="text-white hover:text-accent"
-                            whileHover={{ scale: 1.2, rotate: 5 }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            <FaExternalLinkAlt size={18} />
-                          </motion.a>
-                        </div>
-                      </div>
+        <div className="relative max-w-3xl mx-auto">
+          {/* Timeline center line */}
+          <motion.div 
+            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-accent h-full hidden md:block"
+            variants={lineVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+          />
+          
+          {/* Timeline items */}
+          <div className="relative">
+            {industries.map((industry, index) => (
+              <motion.div
+                key={index}
+                custom={index}
+                variants={timelineVariants}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                className={`mb-16 flex flex-col md:flex-row ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 hidden md:block">
+                  <div className={`w-12 h-12 rounded-full ${industry.color} flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg`}>
+                    {industry.icon}
+                  </div>
+                </div>
+                {/* Mobile timeline dot */}
+                <div className="md:hidden flex justify-center mb-4">
+                  <div className={`w-12 h-12 rounded-full ${industry.color} flex items-center justify-center border-4 border-white dark:border-gray-900 shadow-lg`}>
+                    {industry.icon}
+                  </div>
+                </div>
+                
+                {/* Title side */}
+                <div className={`w-full md:w-10/12 text-center md:text-left ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8 md:text-left'}`}>
+                  <div className="py-4">
+                    <h4 className="text-2xl font-bold text-accent">{industry.title}</h4>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{industry.period}</p>
+                  </div>
+                </div>
+                
+                {/* Content side */}
+                <div className={`w-full md:w-10/12 ${index % 2 === 0 ? 'md:pl-8 md:text-left' : 'md:pr-8 md:text-right'}`}>
+                  <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <p className="text-gray-600 dark:text-gray-300 mb-4">{industry.description}</p>
+                    <div className={`flex flex-wrap gap-2 justify-center md:${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+                      {industry.skills.map((skill, skillIndex) => (
+                        <span 
+                          key={skillIndex} 
+                          className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
+                        >
+                          {skill}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">{project.title}</h4>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, tagIndex) => (
-                      <span 
-                        key={tagIndex} 
-                        className="px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm text-gray-700 dark:text-gray-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         <motion.div 
-          className="text-center mt-12"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 1 }}
         >
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Interested in learning more about my professional experience?
+          </p>
           <motion.a 
-            href="https://github.com/saran-damm" 
-            target="_blank" 
-            rel="noopener noreferrer"
+            href="#contact" 
             className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent/90 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FaGithub /> View More on GitHub
+            Get in Touch
           </motion.a>
         </motion.div>
       </motion.div>
@@ -179,4 +181,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default IndustryExperience;

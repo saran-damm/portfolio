@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
-import yourImage from '../assets/your-image.JPEG';
+import yourImage from '../assets/image.jpg';
 
 const Home = () => {
   const textRef = useRef<HTMLDivElement>(null);
@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden py-16 md:py-0">
       {/* Background animated shapes */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         {[...Array(5)].map((_, i) => (
@@ -59,13 +59,13 @@ const Home = () => {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
         <motion.div
           ref={textRef}
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="order-2 md:order-1"
+          className="order-2 md:order-1 text-center md:text-left"
         >
           <motion.h2 
             className="text-lg md:text-xl text-accent font-medium mb-2"
@@ -75,7 +75,7 @@ const Home = () => {
           </motion.h2>
           
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-accent to-purple-600 bg-clip-text text-transparent"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-accent to-purple-600 bg-clip-text text-transparent"
             variants={itemVariants}
           >
             Sai Saran Dammavalam
@@ -85,11 +85,11 @@ const Home = () => {
             className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8"
             variants={itemVariants}
           >
-            Software Engineer - Machine Learning at Splore, specializing in LLMs, Computer Vision, and AI Applications
+            Machine Learning Engineer specializing in LLMs, Computer Vision, and AI Applications
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row gap-4"
+            className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             variants={itemVariants}
           >
             <motion.div
@@ -138,7 +138,7 @@ const Home = () => {
           </motion.div>
           
           <motion.div 
-            className="flex gap-6 text-2xl mt-8"
+            className="flex space-x-6 text-2xl mt-8 justify-center md:justify-start"
             variants={itemVariants}
           >
             <motion.a 
@@ -181,7 +181,7 @@ const Home = () => {
         >
           <div className="relative">
             <motion.div 
-              className="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gradient-to-br from-accent to-purple-600 p-1"
+              className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full bg-gradient-to-br from-accent to-purple-600 p-1"
               animate={{ 
                 boxShadow: ["0px 0px 20px rgba(124, 58, 237, 0.3)", "0px 0px 40px rgba(124, 58, 237, 0.5)", "0px 0px 20px rgba(124, 58, 237, 0.3)"]
               }}
@@ -204,10 +204,11 @@ const Home = () => {
             {['⚛️', '🤖', '🧠', '💻'].map((emoji, index) => (
               <motion.div
                 key={index}
-                className="absolute text-2xl bg-white dark:bg-gray-800 rounded-full w-12 h-12 flex items-center justify-center shadow-lg"
+                className="absolute text-xl sm:text-2xl bg-white dark:bg-gray-800 rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center shadow-lg"
                 style={{
                   top: `${index * 25}%`,
-                  left: index % 2 === 0 ? '-10%' : '90%',
+                  left: index % 2 === 0 ? '-5%' : '85%',
+                  display: window.innerWidth < 640 && (index === 0 || index === 3) ? 'none' : 'flex'
                 }}
                 animate={{
                   y: [0, -10, 0],

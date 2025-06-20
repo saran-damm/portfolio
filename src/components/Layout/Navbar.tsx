@@ -71,7 +71,7 @@ const Navbar = () => {
           <div className="hidden md:flex gap-8">
             <NavLink to="home" active={activeSection === 'home'}>Home</NavLink>
             <NavLink to="about" active={activeSection === 'about'}>About</NavLink>
-            <NavLink to="projects" active={activeSection === 'projects'}>Projects</NavLink>
+            <NavLink to="projects" active={activeSection === 'projects'}>Expertise</NavLink>
             <NavLink to="contact" active={activeSection === 'contact'}>Contact</NavLink>
           </div>
 
