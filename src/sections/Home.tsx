@@ -31,7 +31,7 @@ const Home = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden py-16 md:py-0">
+    <div id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden py-16 md:py-0 bg-gradient-to-b from-amber-50 to-white">
       {/* Background animated shapes */}
       <div className="absolute inset-0 overflow-hidden -z-10">
         {[...Array(5)].map((_, i) => (

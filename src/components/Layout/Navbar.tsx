@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Link as ScrollLink } from 'react-scroll';
+import { TbBrain } from 'react-icons/tb';
+import { FaLaptopCode, FaRobot } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,7 +52,7 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className={`fixed w-full backdrop-blur-sm z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-gray-900/90 shadow-lg' : 'bg-transparent'}`}
+      className={`fixed w-full backdrop-blur-sm z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-gray-900/95 border-b border-accent/20 shadow-md' : 'bg-transparent'}`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
@@ -62,9 +64,28 @@ const Navbar = () => {
             spy={true} 
             smooth={true} 
             duration={800} 
-            className={`text-2xl font-bold text-accent cursor-pointer transition-opacity duration-300 ${activeSection === 'home' ? 'opacity-0' : 'opacity-100'}`}
+            className={`text-2xl font-bold text-accent cursor-pointer transition-opacity duration-300 flex items-center gap-2 ${activeSection === 'home' ? 'opacity-0' : 'opacity-100'}`}
           >
-            Sai Saran
+            <div className="flex items-center space-x-3">
+              <motion.div
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0 }}
+              >
+                <TbBrain className="text-2xl text-accent" />
+              </motion.div>
+              <motion.div
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+              >
+                <FaLaptopCode className="text-2xl text-accent" />
+              </motion.div>
+              <motion.div
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 1.5 }}
+              >
+                <FaRobot className="text-2xl text-accent" />
+              </motion.div>
+            </div>
           </ScrollLink>
           
           {/* Desktop Menu */}
