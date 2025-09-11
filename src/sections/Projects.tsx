@@ -8,27 +8,43 @@ const IndustryExperience = () => {
 
   const industries = [
     {
-      title: 'Financial Services',
-      period: '2022 - Present',
-      description: 'Developed AI solutions for risk assessment, fraud detection, and automated trading systems. Implemented predictive models for market analysis and customer segmentation.',
-      skills: ['Risk Analytics', 'Fraud Detection', 'Algorithmic Trading', 'Customer Insights'],
-      icon: <FaChartLine size={24} />,
-      color: 'bg-blue-500'
+      title: 'Applied AI & Machine Learning',
+      period: '2023 - Present',
+      description: 'Designed and optimized Retrieval-Augmented Generation (RAG) applications, fine-tuned Large Language Models, and implemented agentic workflows for multi-source document parsing and automated reporting. Delivered solutions in financial document parsing and enterprise-grade search systems.',
+      skills: ['RAG', 'LLMs', 'Prompt Engineering', 'LangChain', 'LangGraph', 'Data Retrieval'],
+      icon: <FaRobot size={24} />,
+      color: 'bg-purple-500'
     },
     {
-      title: 'Sustainability',
-      period: '2020 - 2022',
-      description: 'Created machine learning models for environmental impact assessment, carbon footprint optimization, and sustainable resource allocation. Designed systems for monitoring and reducing energy consumption.',
-      skills: ['Carbon Footprint Analysis', 'Resource Optimization', 'Predictive Maintenance', 'Energy Efficiency'],
+      title: 'Natural Language Processing & Generative AI',
+      period: '2023 - Present',
+      description: 'Specialized in transformer-based models (BERT, GPT, T5, LLaMA, Mistral) with expertise in fine-tuning (LoRA, QLoRA, Prompt Tuning). Built multi-modal solutions integrating Vision-Language Models (Qwen-VL, InternVL) and Stable Diffusion for text-to-image generation.',
+      skills: ['Transformers', 'LoRA/QLoRA', 'Multi-Modal AI', 'Stable Diffusion', 'Vision-Language Models'],
+      icon: <FaComments size={24} />,
+      color: 'bg-indigo-500'
+    },
+    {
+      title: 'Computer Vision & Video Analytics',
+      period: '2023 - 2024',
+      description: 'Developed real-time object detection and tracking systems using YOLO. Applied CNNs, GANs, and VAEs for classification, segmentation, and generative tasks. Built video analytics platforms and integrated them into production workflows.',
+      skills: ['Object Detection', 'Segmentation', 'YOLO', 'GANs/VAEs', 'Digital Vision Systems'],
+      icon: <FaCamera size={24} />,
+      color: 'bg-red-500'
+    },
+    {
+      title: 'Sustainability & Climate AI',
+      period: '2022 - 2023',
+      description: 'Developed Retrieval-Augmented Generation (RAG) pipelines and search-optimized workflows for sustainability use cases, including climate data analysis.',
+      skills: ['RAG Pipelines', 'Search Optimization'],
       icon: <FaLeaf size={24} />,
       color: 'bg-green-500'
     },
     {
-      title: 'Manufacturing',
-      period: '2018 - 2020',
-      description: 'Implemented computer vision systems for quality control, predictive maintenance solutions, and supply chain optimization algorithms. Developed digital twins for production line simulation.',
-      skills: ['Quality Control', 'Predictive Maintenance', 'Supply Chain Optimization', 'Digital Twins'],
-      icon: <FaIndustry size={24} />,
+      title: 'Research & Publications',
+      period: '2023',
+      description: 'Published research on dynamic ensemble learning with evolutionary programming and swarm intelligence for image classification. Participated in national-level hackathons and challenges in geospatial AI and climate change applications.',
+      skills: ['Ensemble Learning', 'Swarm Intelligence', 'Academic Research', 'Geospatial AI'],
+      icon: <FaBook size={24} />,
       color: 'bg-amber-500'
     }
   ];
