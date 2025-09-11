@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView, easeOut } from 'framer-motion';
-import { FaChartLine, FaLeaf, FaIndustry } from 'react-icons/fa';
+import { FaLeaf } from 'react-icons/fa';
+import { FaRobot, FaComments, FaCamera, FaBook } from 'react-icons/fa6';
 
 const IndustryExperience = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
