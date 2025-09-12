@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { FaMapMarkerAlt, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaEnvelope, FaGithub } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa6';
 
 const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -18,9 +19,14 @@ const Contact = () => {
       details: 'saran30702@gmail.com'
     },
     {
-      icon: <FaPhone />,
-      title: 'Call',
-      details: '+91 7095608173'
+      icon: <FaLinkedin />,
+      title: 'LinkedIn',
+      details: 'Sai Saran Dammavalam'
+    },
+    {
+      icon: <FaGithub />,
+      title: 'GitHub',
+      details: 'saran-damm'
     }
   ];
 
@@ -61,7 +67,7 @@ const Contact = () => {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8">
           {contactInfo.map((info, index) => (
             <motion.div
               key={index}
@@ -78,7 +84,27 @@ const Contact = () => {
                 {info.icon}
               </motion.div>
               <h4 className="text-xl font-bold mb-2">{info.title}</h4>
-              <p className="text-gray-600 dark:text-gray-400">{info.details}</p>
+              <p className="text-gray-600 dark:text-gray-400">
+                {info.title === 'LinkedIn' ? (
+                  <a 
+                    href="https://linkedin.com/in/sai-saran-dammavalam" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    {info.details}
+                  </a>
+                ) : info.title === 'GitHub' ? (
+                  <a 
+                    href="https://github.com/saran-damm" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    {info.details}
+                  </a>
+                ) : info.details}
+              </p>
             </motion.div>
           ))}
         </div>

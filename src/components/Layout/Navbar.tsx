@@ -98,13 +98,13 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-md bg-white/80 dark:bg-gray-800/80 shadow-md"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            <div className="w-6 h-0.5 bg-gray-900 dark:bg-gray-100 mb-1.5"></div>
-            <div className="w-6 h-0.5 bg-gray-900 dark:bg-gray-100 mb-1.5"></div>
-            <div className="w-6 h-0.5 bg-gray-900 dark:bg-gray-100"></div>
+            <div className="w-6 h-0.5 bg-accent mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-accent mb-1.5"></div>
+            <div className="w-6 h-0.5 bg-accent"></div>
           </button>
         </div>
 
@@ -114,12 +114,12 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden py-4"
+            className="md:hidden py-4 mt-4 bg-white/95 dark:bg-gray-800/95 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 px-6">
               <NavLink to="home" active={activeSection === 'home'} onClick={() => setIsOpen(false)}>Home</NavLink>
               <NavLink to="about" active={activeSection === 'about'} onClick={() => setIsOpen(false)}>About</NavLink>
-              <NavLink to="projects" active={activeSection === 'projects'} onClick={() => setIsOpen(false)}>Projects</NavLink>
+              <NavLink to="projects" active={activeSection === 'projects'} onClick={() => setIsOpen(false)}>Expertise</NavLink>
               <NavLink to="contact" active={activeSection === 'contact'} onClick={() => setIsOpen(false)}>Contact</NavLink>
             </div>
           </motion.div>
